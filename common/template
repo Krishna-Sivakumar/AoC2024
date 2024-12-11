@@ -1,0 +1,30 @@
+package main
+
+import (
+	"common"
+	"fmt"
+)
+
+func PartOne(filename string) {
+	handler, err := common.FetchFile(filename)
+	if err != nil {
+		panic(err)
+	}
+	defer handler.Cleanup()
+}
+
+func PartTwo(filename string) {
+	handler, err := common.FetchFile(filename)
+	if err != nil {
+		panic(err)
+	}
+	defer handler.Cleanup()
+}
+
+func main() {
+	filename := common.GetProblemFile()
+	fmt.Println("part one:")
+	PartOne(filename)
+	fmt.Println("part two:")
+	PartTwo(filename)
+}
